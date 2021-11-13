@@ -47,12 +47,9 @@ def badtranslate(textf):
 
     if s not in l:
         l.append(s)
+        push("list.txt", "Add " + s, str(l), "main", update=True)
 
     i = l.index(s)
-
-    # with open("list.txt","w") as ft:
-    #     ft.write(str(l))
-    push("list.txt", "Add " + s, str(l), "main", update=True)
     
     return "<a href=" + s + ">" + s + "</a> has been shortened to <a href=/" + str(i) + ">https://flaskurlshortener.ajlee.repl.co/" + str(i) + "</a>. <a href='/'>Back to home</a>"
 
